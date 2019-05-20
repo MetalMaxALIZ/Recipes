@@ -1,5 +1,5 @@
 <%= render 'shared/errors', obj: @recipe %>
-<div class="row">
+<div class="row border">
   <div class="col-md-12">
     <%= form_for(@recipe, :html => {class: "form-horizontal", role: "form"}) do |f| %>
       <div class="form-group">
@@ -8,6 +8,11 @@
         </div>
         <div class="col-md-8">
           <%= f.text_field :name, class: "form-control",placeholder: "Name of recipe", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :hero %>
         </div>
       </div>
       <div class="form-group">

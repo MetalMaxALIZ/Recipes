@@ -10,19 +10,29 @@
       <em>Created by:</em>
     </p>
     <p class="center">
-      <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+      <%= link_to gravatar_for(@recipe.user), recipes_path %>
     </p>
     <p class="center">
-      <small><%= @recipe.chef.chefname.capitalize %></small>
+      <small><%= @recipe.user.username.capitalize %></small>
       <div class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</div>
     </p>
   </div>
   <div class="recipe-actions">
-    <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-xs btn-warning" %>
-    <%= link_to "Delete this recipe", recipe_path(@recipe), method: :delete,
-                                      data: { confirm: "Are you sure you want to delete this recipe?"},
-                                      class: "btn btn-xs btn-danger" %>
+    <% if logged_in? && (current_user == @recipe.user || current_user.admin? )%>
+      <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-xs btn-warning" %>
+      <%= link_to "Delete this recipe", recipe_path(@recipe), method: :delete,
+                                        data: { confirm: "Are you sure you want to delete this recipe?"},
+                                        class: "btn btn-xs btn-danger" %>
+    <% end %>
     <%= link_to "Return to recipe listing", recipes_path(@recipe), class: "btn btn-xs btn-primary" %>
+
+    <fieldset class="rating">
+    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+</fieldset>
   </div>
 
 </div>

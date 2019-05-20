@@ -1,0 +1,8 @@
+<% obj.each do |hero| %>
+  <div class="row">
+    <div class="col-md-12 well">
+      <h4><%= link_to hero.name, edit_hero_path(hero) %></h4>
+      <p><%= hero.element %></p>
+    </div>
+  </div>
+<% end %>

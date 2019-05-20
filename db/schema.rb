@@ -10,14 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_102009) do
+ActiveRecord::Schema.define(version: 2019_05_16_135814) do
 
-  create_table "chefs", force: :cascade do |t|
-    t.string "chefname"
-    t.string "email"
+  create_table "gamemodes", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
+    t.string "image"
+  end
+
+  create_table "heros", force: :cascade do |t|
+    t.string "name"
+    t.integer "rarity"
+    t.string "role"
+    t.string "image"
+    t.string "element"
+  end
+
+  create_table "ratings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -25,7 +36,21 @@ ActiveRecord::Schema.define(version: 2019_04_08_102009) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "chef_id"
+    t.integer "user_id"
+  end
+
+  create_table "stars", force: :cascade do |t|
+    t.integer "recipe_id"
+    t.integer "rating"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.boolean "admin", default: false
   end
 
 end
