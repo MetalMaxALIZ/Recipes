@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_135814) do
+ActiveRecord::Schema.define(version: 2019_05_20_150407) do
 
   create_table "gamemodes", force: :cascade do |t|
     t.string "name"
     t.integer "level"
     t.string "image"
+  end
+
+  create_table "hero_recipes", force: :cascade do |t|
+    t.integer "hero_id"
+    t.integer "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "heros", force: :cascade do |t|
