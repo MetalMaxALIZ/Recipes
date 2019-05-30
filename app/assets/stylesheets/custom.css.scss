@@ -1,9 +1,9 @@
-$navbar-default-bg: #306;
+$navbar-default-bg: #212347;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
 
 .center {
   text-align: center;
@@ -14,6 +14,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Roboto Condensed', sans-serif;
+
+}
+.colored{
+  color: #fff;
 }
 
 .jumbotron {
@@ -80,7 +85,7 @@ body {
   bottom: 0;
   width: 100vw;
   height: 7vh;
-  background-color: #212447
+  background-color: #212347
 }
 .fondo {
   background: rgba(69, 37, 186, 0.3);
@@ -94,7 +99,7 @@ body {
 }
 
 .well a {
-  color: #073B15
+  color: #fff;
 }
 
 .user_info {
