@@ -20,7 +20,13 @@ body {
   background-image: asset-url('banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  height: 40vh;
   filter: blur();
+}
+.prueba{
+  margin-top: 25%;
+
 }
 .control-label {
   color: #ffff
@@ -72,11 +78,17 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 7vh;
   background-color: #212447
 }
-
+.fondo {
+  background: rgba(69, 37, 186, 0.3);
+  color: #fff;
+  margin-bottom: 2rem;
+  border: 2px solid #4525ba;
+  border-radius: 3px;
+}
 .description {
   margin-top: 0;
 }
