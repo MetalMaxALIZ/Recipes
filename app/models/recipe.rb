@@ -5,4 +5,5 @@ belongs_to :user
 has_many :stars, dependent: :destroy
 has_many :hero_recipes
 has_many :heros, through: :hero_recipes
+has_many :comments, dependent: :destroy
 end

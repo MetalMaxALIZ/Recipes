@@ -1,6 +1,6 @@
  <div class="jumbotron center">
 
-   <p class="prueba"><%= link_to "Sign up!", signup_path, class: "btn btn-default btn-lg btn-xlarge" %></p>
+   <p class="adjust"><%= link_to "Sign up!", signup_path, class: "btn btn-default btn-lg btn-xlarge" unless logged_in? %></p>
    </div>
 
    <div class="row border fondo">
