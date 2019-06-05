@@ -22,7 +22,7 @@
         </p>
       <p>
         <span class="quiet"><small>Created
-        <%= time_ago_in_words(recipe.created_at) %> ago</small></span>
+        <%= time_ago_in_words(recipe.created_at) %> ago by <%= recipe.user.username.capitalize %></small></span>
       </p>
       <% if logged_in? && (current_user == recipe.user || current_user.admin? ) %>
         <div class="recipe-actions">

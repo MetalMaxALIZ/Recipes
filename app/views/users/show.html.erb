@@ -5,8 +5,8 @@
     <%= gravatar_for @user, size: 150 %>
   </div>
 </div>
-
-<h4 align="center"><%= @user.username %>'s recipes</h4>
+<% unless @user.recipes.empty? %>
+<h4 class="colored center"><%= @user.username %>'s posts</h4>
 <div align="center">
   <%= will_paginate @user_recipes %>
 </div>
@@ -14,3 +14,8 @@
 <div align="center">
   <%= will_paginate @user_recipes %>
 </div>
+<% else %>
+<h4 class="colored center">
+ Any post created.
+</h4>
+<% end %>
