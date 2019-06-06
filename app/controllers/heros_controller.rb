@@ -1,6 +1,6 @@
 class HerosController < ApplicationController
   def index
-    @heros = Hero.paginate(page: params[:page], per_page: 25)
+    @heros = Hero.where(element: 'Light').paginate(page: params[:page], per_page: 25)
   end
 
   def new

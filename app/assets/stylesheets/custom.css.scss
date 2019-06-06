@@ -119,13 +119,25 @@ body {
   list-style: none;
   padding-left: 0;
 }
+.list-fit {
+    white-space: nowrap;
+    width: 18%;
+    padding: 0;
+    margin-left: 1%;
+}
 .user-title{
   color: #073B15;
   font-weight: bold;
   font-size: 1.25em;
 }
 
+.edit {
+  color: green;
+}
 
+.delete {
+  color: red;
+}
 /****** Style Star Rating Widget *****/
 
 .rating {
